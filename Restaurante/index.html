@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Directory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Restaurant Directory</h1>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">Inicio</a></li>
+                <li><a onclick="showSection('search')">Buscar</a></li>
+                <li><a onclick="showSection('new-restaurant')">Nuevo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Restaurantes</h2>
+            <div class="restaurant-list">
+                <div class="restaurant-card">
+                    <img src="images/antioquena.jpg">
+                    <div class="content">
+                        <h3>La Fonda Antioqueña</h3>
+                        <p>Cra. 50 # 50-50, Copacabana</p>
+                        <p>Comida tradicional colombiana</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/gurmet.jpg" alt="Gourmet & Grill">
+                    <div class="content">
+                        <h3>Gourmet & Grill</h3>
+                        <p>Cl. 48 # 49-20, Copacabana</p>
+                        <p>Carnes y platos internacionales</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/tierra.jpg" alt="Sabores de mi Tierra">
+                    <div class="content">
+                        <h3>Sabores de mi Tierra</h3>
+                        <p>Cra. 49-98, Copacabana</p>
+                        <p>Comida típica de la región</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/rancherito.jpeg">
+                    <div class="content">
+                        <h3>El Rancherito Paisa</h3>
+                        <p>Copacabana, Antioquia</p>
+                        <p>Comida colombiana</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="search" class="hidden">
+            <h2>Buscar Restaurante</h2>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Escribe un texto">
+                <button type="button" onclick="searchRestaurant()">Buscar</button>
+            </form>
+            <div id="search-results"></div>
+        </section>
+
+        <section id="new-restaurant" class="hidden">
+            <h2>Nuevo Restaurante</h2>
+            <form id="new-restaurant-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="description">Descripción:</label>
+                <input type="text" id="description" name="description" required>
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="image">Imagen URL:</label>
+                <input type="text" id="image" name="image" required>
+                <button type="button" onclick="addRestaurant()">Guardar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Restaurant Directory</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
